@@ -1,0 +1,399 @@
+/* =========================
+   Base & Reset
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #103A52;
+    background: #FBFCFC;
+}
+
+/* =========================
+   Navbar styling
+   ========================= */
+
+.logo{
+
+    max-width:200px;
+    display:flex;
+    margin-left:20px;
+}
+.navbar {
+    background-color: #79A4AB;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Logo image sizing (keep container flexible for layout) */
+.logo img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   Hero styling
+   ========================= */
+.hero {
+    background: #FBFCFC;
+    text-align: center;
+    padding: 0;
+    position: relative;
+}
+
+.hero .container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.hero img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+.hero .banner {
+    background-color:#A09486B3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    color: #103A52;
+    z-index: 60; /* above slides and logo-overlay */
+    border-radius: 8px;
+}
+
+.btn {
+    background: #79A4AB;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* =========================
+   Section styling
+   ========================= */
+section {
+    padding: 15px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+}
+
+
+
+/* About */
+.about p {
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Services */
+.service-list {
+    display: flex;
+    gap: 20px;
+}
+
+.service {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+
+
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 56%;
+  height: 70%;
+  object-fit: cover;
+  display: block; /* IMPORTANT */
+  border-radius: 8px;
+}
+
+
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: #103A52;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;   
+  user-select: none;
+}
+
+.next {
+  right: 50px;
+}
+
+.prev {
+  left: 50px;
+}
+
+/* Contact */
+.contact form {
+    display: grid;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact textarea {
+    height: 120px;
+}
+
+.contact button {
+    background: #0077cc;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.contact-info span {
+    display: inline; /* keep it on one line */
+}
+
+/* =========================
+   Mobile Responsive Design
+   ========================= */
+
+@media (max-width: 768px) {
+    /* Logo sizing on mobile */
+    .logo {
+        max-width: 120px;
+        margin-left: 10px;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    /* Navigation on mobile */
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    /* Hero section on mobile */
+
+    .hero .banner {
+        left: 0;             /* start at left edge */
+        right:0;
+        width: 100%;         /* span full width */
+        transform: translateY(-50%); /* vertical center only */
+        border-radius: 0;    /* optional: remove rounded corners for full-width look */
+        padding: 15px 10px;  /* adjust padding for mobile */
+    }
+    .hero h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Slideshow on mobile */
+    .slideshow-container {
+        height: 300px;
+    }
+
+    .slide img {
+        width: 70%;
+        height: 80%;
+    }
+
+    .prev,
+    .next {
+        padding: 12px;
+        font-size: 20px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    /* Services section on mobile */
+    .service-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service {
+        padding: 15px;
+    }
+
+    /* Section padding on mobile */
+    section {
+        padding: 12px 15px;
+    }
+
+    /* General text sizing on mobile */
+    h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* Contact form on mobile */
+    .contact input,
+    .contact textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contact textarea {
+        height: 100px;
+    }
+    .contact-info span {
+        display: block;      /* each piece gets its own line */
+        margin: 3px 0;       /* optional spacing between lines */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .navbar .container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+    
+
+    .slideshow-container {
+        height: 200px;
+    }
+
+    .slide img {
+        width: 80%;
+        height: 85%;
+    }
+
+    .prev,
+    .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .next {
+        right: 5px;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
