@@ -1,6 +1,10 @@
 /* =========================
    Base & Reset
    ========================= */
+html {
+    scroll-padding-top: 80px; /* offset for sticky navbar */
+}
+
 * {
     margin: 0;
     padding: 0;
